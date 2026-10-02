@@ -1,50 +1,18 @@
-"""
-12_typing / type_hints.py
-Topic: Type Hints and Annotations (TypeScript vs Python typing)
+# In TypeScript: let age: number = 25; let name: string = "Alice";
+# Python Type Hints (checked by linters like mypy, ignored at runtime)
 
-TYPESCRIPT vs PYTHON TYPE ANNOTATIONS:
---------------------------------------
-TypeScript:
-    let age: number = 25;
-    let items: string[] = ["a", "b"];
-    function process(id: number | string): string { ... }
-    // TypeScript types are completely erased at compile time (no runtime presence).
+name: str = "Alice"
+age: int = 25
+skills: list[str] = ["Python", "JavaScript"]
 
-Python:
-    age: int = 25
-    items: list[str] = ["a", "b"]
-    def process(identifier: int | str) -> str: ...
-    // Python type hints are NOT enforced by Python at runtime!
-    // Python ignores them at execution time.
-    // Static type checkers (mypy, pyright) check them during linting / CI.
-    // They are preserved in `__annotations__` for reflection and libraries like Pydantic.
-"""
-from typing import Callable, Optional, Any
+# In TS: id: number | string
+def format_id(user_id: int | str) -> str:
+    return f"ID-{user_id}"
 
-# 1. Primitives & Collections
-user_name: str = "Alice"
-user_id: int = 1001
-is_active: bool = True
-tags: list[str] = ["python", "typescript", "fullstack"]
-metadata: dict[str, Any] = {"version": 1.2, "env": "production"}
+# In TS: email: string | null
+def get_email(email: str | None = None) -> str:
+    return email if email else "No email"
 
-# 2. Union Types (Python 3.10+ uses `|` just like TypeScript!)
-# TS: id: number | string
-def format_user_id(identifier: int | str) -> str:
-    return f"USR-{identifier}"
-
-# 3. Optional Types
-# TS: email?: string  or  string | null
-def get_user_avatar(email: str | None = None) -> str:
-    if email:
-        return f"https://avatar.dev/{email}"
-    return "https://avatar.dev/default"
-
-# 4. Callable (Function Signatures)
-# TS: transform: (val: number) => number
-def apply_math(value: int, transform: Callable[[int], int]) -> int:
-    return transform(value)
-
-print("Formatted ID:", format_user_id(505))
-print("Formatted ID with string:", format_user_id("admin_99"))
-print("Transform result:", apply_math(10, lambda n: n * 5))
+print(format_id(101))
+print(format_id("admin"))
+print(get_email())

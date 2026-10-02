@@ -1,19 +1,11 @@
-"""
-08_modules / user_service.py
-Topic: Service Module for User Management
-"""
-
+# Example service class
 class UserService:
     def __init__(self):
-        self._users: dict[int, dict] = {}
+        self.users = []
 
-    def register_user(self, user_id: int, username: str, email: str) -> dict:
-        user = {"id": user_id, "username": username, "email": email}
-        self._users[user_id] = user
-        return user
+    def add_user(self, name: str):
+        self.users.append(name)
+        return self.users
 
-    def find_by_id(self, user_id: int) -> dict | None:
-        return self._users.get(user_id)
-
-    def list_users(self) -> list[dict]:
-        return list(self._users.values())
+    def get_users(self):
+        return self.users
