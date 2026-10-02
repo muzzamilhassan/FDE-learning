@@ -1,0 +1,9 @@
+# Production / Project Dependencies
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Development, Linting & Testing Dependencies
+pytest>=8.0.0
+black>=24.0.0
+flake8>=7.0.0
+mypy>=1.9.0
