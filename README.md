@@ -1,55 +1,91 @@
-# Python Learning Path for JavaScript Developers
+# Python Learning Path
 
-Clean, concise, bite-sized Python code examples comparing JavaScript directly to Python, with a simple focus on Object-Oriented Programming (OOP).
+A hands-on, pure-Python course. Every topic follows the same rhythm:
+**Scenario → Topic → Questions**, and every module ends with real
+**Projects** you build yourself.
 
----
-
-## ⚡ Quick JavaScript vs Python Cheat Sheet
-
-| JavaScript | Python Equivalent | Note |
-| :--- | :--- | :--- |
-| `let x = 10; const y = 20;` | `x = 10; y = 20` | No declaration keywords (`let`/`const`) |
-| `console.log("Hi", name)` | `print("Hi", name)` | Built-in print |
-| `` `Hello ${name}` `` | `f"Hello {name}"` | f-string |
-| `arr.push(x)` | `lst.append(x)` | Add to end of list |
-| `arr.length` | `len(lst)` | Built-in length function |
-| `{ name: "Alice" }` | `{"name": "Alice"}` | Dict keys **must** be quoted strings |
-| `obj.key ?? default` | `obj.get("key", default)` | Safe dictionary access |
-| `&&`, `\|\|`, `!` | `and`, `or`, `not` | Logical operators |
-| `===` (value check) | `==` | Deep structural value equality |
-| `arr.length === 0` | `if not lst:` | **Empty `[]` and `{}` are Falsy in Python!** |
-| `...args` | `*args` / `**kwargs` | Positional tuple & keyword dict |
-| `arr.map(fn).filter(fn)` | `[fn(x) for x in arr if cond]` | List comprehensions |
-| `class Dog extends Animal` | `class Dog(Animal):` | Class inheritance |
-| `constructor()` | `def __init__(self):` | Initializer method |
-| `this.name` | `self.name` | `self` explicitly passed as 1st param |
-| `get prop() / set prop()` | `@property / @prop.setter` | Managed properties |
-| `Promise.all([p1, p2])` | `asyncio.gather(c1, c2)` | Concurrent async |
+No prior Python needed. No other-language comparisons — just Python.
 
 ---
 
-## 📁 Modules
+## How Each Lesson Works
 
-- [**`01_basics/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/01_basics) — Variables, data types, strings, operators, I/O.
-- [**`02_collections/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/02_collections) — Lists, tuples, dictionaries, sets.
-- [**`03_control_flow/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/03_control_flow) — Conditions, loops, match-case.
-- [**`04_functions/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/04_functions) — Functions, arguments, lambdas, comprehensions.
-- [**`05_js_to_python/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/05_js_to_python) — Map/filter/reduce, destructuring, spread/rest, truthy/falsy, equality.
-- [**`06_oop/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/06_oop) — Classes (`self`), inheritance, properties, dunder methods.
-- [**`07_errors/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/07_errors) — Exceptions & custom errors.
-- [**`08_modules/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/08_modules) — Imports and `__name__ == "__main__"`.
-- [**`09_files/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/09_files) — Text, JSON, and CSV files.
-- [**`10_python_features/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/10_python_features) — Iterators, generators, decorators, context managers.
-- [**`11_async/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/11_async) — `async / await` and concurrent tasks.
-- [**`12_typing/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/12_typing) — Type hints and `@dataclass`.
-- [**`13_packages/`**](file:///c:/Users/Revnix/Desktop/personal/fde-learning/13_packages) — Virtual environments and `requirements.txt`.
+Every `.py` file is one bite-sized lesson with three parts:
+
+| Part | What it gives you |
+| :--- | :--- |
+| **SCENARIO** | A real-world mini-story that motivates the topic |
+| **TOPIC** | Short explanation + runnable example code |
+| **QUESTIONS** | 3-5 exercises (predict the output, spot the bug, write code) |
+
+**How to study a lesson:**
+
+1. Run the file: `python 01_basics/variables.py`
+2. Read the scenario and topic, play with the examples
+3. Try every question **yourself** before peeking
+4. Check your answers in `answers/`
 
 ---
 
-## 🚀 How to Run
+## Learning Path
+
+- [**`01_basics/`**](01_basics) — Variables, data types, strings, operators, input/output, equality.
+- [**`02_collections/`**](02_collections) — Lists, tuples, dictionaries, sets, unpacking.
+- [**`03_control_flow/`**](03_control_flow) — Conditions, truthy/falsy, loops, match-case.
+- [**`04_functions/`**](04_functions) — Functions, arguments, lambdas, map/filter/reduce, comprehensions.
+- [**`05_oop/`**](05_oop) — Classes, inheritance, properties, dunder methods.
+- [**`06_errors/`**](06_errors) — Exceptions and custom exceptions.
+- [**`07_modules/`**](07_modules) — Imports, packages, `__name__ == "__main__"`.
+- [**`08_files/`**](08_files) — Text, JSON, and CSV files.
+- [**`09_python_features/`**](09_python_features) — Iterators, generators, decorators, context managers.
+- [**`10_async/`**](10_async) — `async / await` and concurrent tasks.
+- [**`11_typing/`**](11_typing) — Type hints and dataclasses.
+- [**`12_packages/`**](12_packages) — Virtual environments and `requirements.txt`.
+
+---
+
+## Projects (Build to Learn)
+
+After each few modules, build a project. Starter code with TODOs is in
+[`99_projects/`](99_projects); full solutions in `answers/projects/`.
+
+| # | Project | Difficulty | Practices |
+| :--- | :--- | :--- | :--- |
+| 1 | Number Guessing Game | Beginner | Basics, loops, conditions, `random` |
+| 2 | Todo List CLI | Beginner+ | Collections, functions, match, JSON files |
+| 3 | Contact Book | Intermediate | Dicts, comprehensions, errors, sorting |
+| 4 | Bank Account System | Intermediate+ | OOP: classes, inheritance, properties, exceptions |
+| 5 | Sales Data Analyzer | Capstone | CSV, generators, decorators, typing, dataclasses |
+
+```bash
+python 99_projects/project_01_number_game.py
+```
+
+---
+
+## Answers
+
+Every module has one answers file with worked solutions to all its
+questions — but try first!
+
+```bash
+python answers/01_basics.py
+```
+
+---
+
+## How to Run
+
+Any lesson, from the repo root:
 
 ```bash
 python 01_basics/variables.py
-python 06_oop/classes.py
-python 06_oop/inheritance.py
+python 05_oop/classes.py
+```
+
+The `07_modules` lessons import each other — run `main.py` from inside its folder:
+
+```bash
+cd 07_modules
+python main.py
 ```
