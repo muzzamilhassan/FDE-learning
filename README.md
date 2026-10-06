@@ -1,10 +1,11 @@
-# Python Learning Path
+# Python for AI — Learning Path
 
-A hands-on, pure-Python course. Every topic follows the same rhythm:
-**Scenario → Topic → Questions**, and every module ends with real
-**Projects** you build yourself.
+A hands-on course that takes you from "never wrote Python" to
+**building AI features**: data analysis, machine learning, LLM APIs,
+RAG, and agents.
 
-No prior Python needed. No other-language comparisons — just Python.
+Every topic follows the same rhythm: **Scenario → Topic → Questions**,
+and every few modules you build a real **Project**.
 
 ---
 
@@ -27,7 +28,23 @@ Every `.py` file is one bite-sized lesson with three parts:
 
 ---
 
-## Learning Path
+## Setup (one time)
+
+Part 1 needs only Python. Part 2 needs the AI packages:
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate        # Windows  (Linux/Mac: source .venv/bin/activate)
+pip install -r requirements.txt
+```
+
+LLM lessons (`16_llm_basics` onward) run **without any API key** — they
+use built-in simulations of the API, with the real code shown and ready
+for when you have a key.
+
+---
+
+## Part 1 — Python Fundamentals
 
 - [**`01_basics/`**](01_basics) — Variables, data types, strings, operators, input/output, equality.
 - [**`02_collections/`**](02_collections) — Lists, tuples, dictionaries, sets, unpacking.
@@ -42,12 +59,21 @@ Every `.py` file is one bite-sized lesson with three parts:
 - [**`11_typing/`**](11_typing) — Type hints and dataclasses.
 - [**`12_packages/`**](12_packages) — Virtual environments and `requirements.txt`.
 
+## Part 2 — Python for AI
+
+- [**`13_numpy/`**](13_numpy) — Arrays, shapes, masks, broadcasting, vectorized math.
+- [**`14_pandas/`**](14_pandas) — DataFrames: load, explore, filter, group, clean data.
+- [**`15_ml_sklearn/`**](15_ml_sklearn) — Your first models: train/test, evaluation, pipelines.
+- [**`16_llm_basics/`**](16_llm_basics) — LLM API anatomy, prompting, structured JSON output.
+- [**`17_rag/`**](17_rag) — Embeddings, semantic search, retrieval-augmented generation.
+- [**`18_ai_agents/`**](18_ai_agents) — Tool calling and the agent loop.
+
 ---
 
 ## Projects (Build to Learn)
 
-After each few modules, build a project. Starter code with TODOs is in
-[`99_projects/`](99_projects); full solutions in `answers/projects/`.
+Starter code with TODOs is in [`99_projects/`](99_projects); full
+solutions in `answers/projects/`.
 
 | # | Project | Difficulty | Practices |
 | :--- | :--- | :--- | :--- |
@@ -55,10 +81,14 @@ After each few modules, build a project. Starter code with TODOs is in
 | 2 | Todo List CLI | Beginner+ | Collections, functions, match, JSON files |
 | 3 | Contact Book | Intermediate | Dicts, comprehensions, errors, sorting |
 | 4 | Bank Account System | Intermediate+ | OOP: classes, inheritance, properties, exceptions |
-| 5 | Sales Data Analyzer | Capstone | CSV, generators, decorators, typing, dataclasses |
+| 5 | Sales Data Analyzer | Capstone (Part 1) | CSV, generators, decorators, typing, dataclasses |
+| 6 | Data Explorer | Intermediate | Pandas: load, clean, group, report |
+| 7 | First ML Classifier | Intermediate | sklearn: split, baseline, train, evaluate |
+| 8 | Semantic FAQ Search + RAG | Advanced | Embeddings, cosine similarity, retrieval |
+| 9 | Mini AI Agent | Advanced | Tool registry, tool calling, agent loop |
 
 ```bash
-python 99_projects/project_01_number_game.py
+python 99_projects/project_06_data_explorer.py
 ```
 
 ---
@@ -80,7 +110,7 @@ Any lesson, from the repo root:
 
 ```bash
 python 01_basics/variables.py
-python 05_oop/classes.py
+python 13_numpy/array_basics.py
 ```
 
 The `07_modules` lessons import each other — run `main.py` from inside its folder:

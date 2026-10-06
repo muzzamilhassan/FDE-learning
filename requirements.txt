@@ -1,0 +1,10 @@
+# Python for AI - install with:  pip install -r requirements.txt
+# (Part 1, modules 01-12, needs nothing - pure standard library.)
+
+numpy>=2.0          # 13_numpy - arrays and fast math
+pandas>=2.2         # 14_pandas - dataframes, loading and cleaning data
+scikit-learn>=1.5   # 15_ml_sklearn - your first machine learning models
+
+# Optional (module 16 shows real API code that uses it; lessons run
+# without it until you have an API key):
+anthropic>=0.40
